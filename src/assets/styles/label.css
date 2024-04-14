@@ -1,0 +1,23 @@
+.label-title-16 {
+  color: #444f60;
+  font-size: 16px;
+}
+
+.label-title-24-bold {
+  color: #444f60;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.label-title-outline-16 {
+  color: #444f60;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.label-title-outline-16:hover {
+  color: #8c8cf9;
+  font-size: 16px;
+  text-decoration: underline;
+  cursor: pointer;
+}
