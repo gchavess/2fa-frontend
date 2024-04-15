@@ -38,7 +38,7 @@ Com pnpm:
 pnpm install
 ```
 
-3. Builde o projeto
+3. Execute o projeto
 
 ```
 yarn serve
