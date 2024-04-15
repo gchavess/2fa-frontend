@@ -1,29 +1,50 @@
-# 2fa-frontend
+# Frontend de Autenticação de Fatores
 
-## Project setup
+Este é um projeto frontend para autenticação de fatores, incluindo criação de usuário, login e autenticação de dois fatores.
+
+## Descrição
+
+Este projeto é um frontend para um sistema de autenticação de fatores. Ele permite que os usuários criem contas, façam login e utilizem autenticação de dois fatores para garantir a segurança de suas contas.
+
+## Tecnologias Utilizadas
+
+- CSS
+- JavaScript
+- Vue.js
+- Element-plus
+
+## Instalação
+
+Para executar este projeto localmente, siga estas etapas:
+
+1. Clone o repositório:
 
 ```
-yarn install
+git clone https://github.com/gchavess/2fa-frontend.git
 ```
 
-### Compiles and hot-reloads for development
+2. Baixe as dependencias:
+
+Com yarn:
+```
+yarn
+```
+Com npm:
+```
+npm install
+```
+Com pnpm:
+```
+pnpm install
+```
+
+3. Builde o projeto
 
 ```
 yarn serve
 ```
+O projeto estará disponível em http://localhost:8080/.
 
-### Compiles and minifies for production
+## Utilização
+Após a execução do projeto, você pode interagir com ele através do seu navegador.
 
-```
-yarn build
-```
-
-### Lints and fixes files
-
-```
-yarn lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
