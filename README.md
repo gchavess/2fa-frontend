@@ -12,6 +12,7 @@ Este projeto é um frontend para um sistema de autenticação de fatores. Ele pe
 - JavaScript
 - Vue.js
 - Element-plus
+- Axios
 
 ## Instalação
 
