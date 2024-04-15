@@ -1,15 +1,13 @@
 <template>
+  <button type="button" @click="logout()" class="button-logout">Logout</button>
+
   <div class="home-view">
-    <img
-      src="@/assets/system-in-construction.svg"
-      alt="Logo"
-      width="600"
-      height="600"
-    />
-    <span class="label-title-24-bold" style="text-align: center"
-      >Ops! Parece que esta página está vazia.<br />
-      Estamos trabalhando nisso!<br />
-      Enquanto isso, que tal explorar outras partes do site?</span
+    <span class="label-title-24-bold"
+      >Bem-vindo ao Smart Integrações!<br />
+      Explore nossas integrações para simplificar suas tarefas diárias.<br />
+      Se precisar de ajuda, estamos aqui para você!<br /><br />
+      Atenciosamente,<br />
+      Equipe Smart Integrações</span
     >
   </div>
 </template>
@@ -20,7 +18,20 @@ import { Component, Vue } from "vue-facing-decorator";
 @Component({
   components: {},
 })
-export default class HomeView extends Vue {}
+export default class HomeView extends Vue {
+  mounted() {
+    const token = sessionStorage.getItem("token");
+
+    if (!token) {
+      this.$router.push("/login");
+    }
+  }
+
+  logout() {
+    sessionStorage.removeItem("token");
+    this.$router.push("/login");
+  }
+}
 </script>
 
 <style scoped>
@@ -32,5 +43,10 @@ export default class HomeView extends Vue {}
   background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
+}
+
+.button-logout {
+  position: absolute;
+  right: 0;
 }
 </style>

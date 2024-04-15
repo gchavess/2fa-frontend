@@ -69,7 +69,7 @@
 import { Component, Vue } from "vue-facing-decorator";
 import InputLabel from "@/components/InputLabel/InputLabel.vue";
 import UserService from "@/services/user/UserService";
-import { ElNotification } from "element-plus";
+import { ElNotification, ElLoading } from "element-plus";
 
 @Component({
   components: { InputLabel },
@@ -115,6 +115,8 @@ export default class CadasterUserView extends Vue {
   }
 
   async getCodeVerification() {
+    const loading = ElLoading.service();
+
     try {
       await UserService.verificationCode({
         email: this.userData.email,
@@ -133,18 +135,22 @@ export default class CadasterUserView extends Vue {
         message: error.response.data.message,
         type: "error",
       });
+    } finally {
+      loading.close();
     }
   }
 
   async login() {
     try {
-      await UserService.login(this.userData);
+      const response = await UserService.login(this.userData);
 
       ElNotification({
-        title: "Login bem-sucedido.",
-        message: "Bem-vindo de volta!",
+        title: "Bem-vindo de volta!",
+        message: "Login bem-sucedido.",
         type: "success",
       });
+
+      sessionStorage.setItem("token", response.data.token);
 
       this.$router.push("/home");
     } catch (error) {
